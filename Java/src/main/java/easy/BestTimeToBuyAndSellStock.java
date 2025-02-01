@@ -12,15 +12,12 @@ public class BestTimeToBuyAndSellStock {
     }
 
     public static int maxProfit(int[] prices) {
-       int priceBestDayToBuy = prices[0];
-       int bestProfit = 0;
+        int totalProfit = 0;
         for (int i = 1; i < prices.length; i++) {
-            if (priceBestDayToBuy > prices[i]) {
-                priceBestDayToBuy = prices[i];
+            if (prices[i] > prices[i - 1]) {
+                totalProfit += prices[i] - prices[i - 1];
             }
-            bestProfit = Math.max(bestProfit , (prices[i] - priceBestDayToBuy));
         }
-
-        return bestProfit;
+        return totalProfit;
     }
 }
