@@ -20,6 +20,17 @@ public class LinkedList {
         }
     }
 
+    public void Append (int value){
+        Node newNode = new Node(value);
+        if (length == 0){
+            this.head = newNode;
+            this.tail = newNode;
+        } else {
+            tail.next = newNode;
+            this.tail = newNode;
+        }
+        length++;
+    }
     public LinkedList(int value) {
         Node newNode = new Node(value);
         this.head = newNode;
